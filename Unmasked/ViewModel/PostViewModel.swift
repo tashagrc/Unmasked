@@ -10,8 +10,8 @@ import Foundation
 class PostViewModel: ObservableObject {
     @Published var posts: [PostModel] = []
     
-    func addPost(name: String, image: String) {
-        let newPost = PostModel(name: name, image: image)
+    func addPost(username: String, caption: String, location: String, postImage: String, profileImage: String, initialLikes: Int, commentUser:String, commentText: String) {
+        let newPost = PostModel(username: username, caption: caption, location: location, postImage: postImage, profileImage: profileImage, initialLikes: initialLikes, commentUser: commentUser, commentText: commentText)
         posts.append(newPost)
     }
 }
