@@ -52,7 +52,7 @@ struct PostView: View {
                     .padding(.bottom, 5)
                     
                     ZStack(alignment: .topLeading){
-                        Image(post.username)
+                        Image(post.postImage)
                             .resizable()
                             .scaledToFill()
                             .cornerRadius(20)
@@ -99,6 +99,22 @@ struct PostView: View {
                                 .padding(.top, 5)
                             
                             Text(post.caption)
+                                .font(.system(size: 16))
+                                .padding(.top, 5)
+                        }
+                        
+                        Text("View comments")
+                            .font(.system(size: 16))
+                            .padding(.leading, 18)
+                            .padding(.top, 5)
+                        HStack {
+                            Text(post.commentUser)
+                                .font(.system(size: 16))
+                                .bold()
+                                .padding(.leading, 18)
+                                .padding(.top, 5)
+                            
+                            Text(post.commentText)
                                 .font(.system(size: 16))
                                 .padding(.top, 5)
                         }
