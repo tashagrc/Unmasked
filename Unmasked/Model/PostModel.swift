@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct PostModel: Identifiable {
+    let id = UUID() // Conforms to Identifiable
+    var name: String
+    var image: String
+}

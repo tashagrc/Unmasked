@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct ChatView: View {
+    @ObservedObject var viewModel: ChatViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(viewModel.chats) { chat in
+                VStack(alignment: .leading) {
+                    Text(chat.name)
+                        .font(.headline)
+                    Text(chat.message)
+                        .font(.subheadline)
+                }
+                .padding(.vertical, 5)
+            }
+        }
+        .navigationTitle("Chats")
     }
 }
 
-#Preview {
-    ChatView()
-}
+

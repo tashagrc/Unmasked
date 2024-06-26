@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct ChatModel: Identifiable {
+    let id = UUID() // Conforms to Identifiable
+    var name: String
+    var message: String
+}
